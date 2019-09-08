@@ -1,0 +1,76 @@
+#include<iostream>
+
+
+using namespace std;
+
+
+
+
+
+void init2DArray(int** mas2d, size_t rows, size_t cols);
+void print2DArray(int** mas2d, size_t rows, size_t cols);
+
+
+int main()
+{
+	size_t rows, cols;// количество столбцов и строчек
+	cout << "Write mass rows: ";
+	cin >> rows;
+	cout << "Write mass cols: ";
+	cin >> cols;
+	
+	int** arr2d;
+
+	arr2d = new int*[rows];
+
+	for (int i = 0; i < rows; i++) {
+		arr2d[i] = new int[cols];
+	}
+		
+	init2DArray(arr2d, rows, cols);//заполнение массива
+	print2DArray(arr2d, rows, cols);//вывод массива
+
+
+	return 0;
+
+}
+
+void init2DArray(int** mas2d, size_t rows, size_t cols)
+{
+	size_t counter = 1;
+	for (size_t i = 0; i < rows; ++i)
+	{
+		//проверяем какая строчка двумерного массива, если 1-я или нечетная, то заполняем с 0-го элемента, иначе с конечного
+		if ((i % 2) == 0) {
+			for (size_t k = 0; k < cols; k++)
+			{
+				mas2d[i][k] = counter;
+				counter++;
+			}
+		}
+		else
+		{
+			for (int k = cols - 1; 0 <= k; k--)
+			{
+				mas2d[i][k] = counter;
+				counter++;
+			}
+		}
+
+	}
+
+}
+
+
+void print2DArray(int** mas2d, size_t rows, size_t cols)
+{
+	for (size_t i = 0; i < rows; ++i)
+	{
+		for (size_t j = 0; j < cols; ++j)
+		{
+			cout << " " << mas2d[i][j];
+
+		}
+		cout << endl;
+	}
+}
