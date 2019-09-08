@@ -1,0 +1,67 @@
+#include <iostream>
+#include <string>
+using namespace std;
+
+void getDate(string str);
+void checkTheDate(string day, string month, string year);
+
+int main()
+{
+	string str1;
+	cout << "Write you date like 1-5-2004(Day-Month-Year): ";
+	cin >> str1;
+	getDate(str1);
+
+
+	return 0;
+}
+
+void getDate(string str)
+{
+	string day, month, year;
+	size_t count = 1;
+	for (size_t i = 0; i < strlen(str.c_str()); i++) {
+		if (count == 1) {
+			if (str[i] == '-') {
+				count++;
+			}
+			else {
+				day += str[i];
+			}
+
+
+		}
+		else if (count == 2) {
+			if (str[i] == '-') {
+				count++;
+				}
+			else {
+				month += str[i];
+			}
+				
+
+		}
+		else {
+			if (str[i] == '-') {
+				continue;
+			}
+			else {
+				year += str[i];
+			}
+
+		}
+
+		
+	}
+	checkTheDate(day, month, year);
+}
+
+void checkTheDate(string day, string month, string year)
+{
+	if (stoi(day) <= 31 && stoi(month) <= 12) {
+		cout << "Your day: " << day << endl << "Your month: " << month << endl << "Your year: " << year << endl;
+	}
+	else {
+		cout << "This date isn`t correct" << endl;
+	}
+}
