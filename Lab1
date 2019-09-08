@@ -1,0 +1,29 @@
+#include <iostream>
+using namespace std;
+
+int main() {
+	int a, b, c, k;//k число в которое будет записываться значение числа а, если условие a>=b>=c 
+	//будет неверно(можно ещё записывать старое значение а в с, 
+	//но тогда нужно выводить разные сообщения при разных условиях) 
+	cout << "Write num a:";
+	cin >> a;
+	cout << "Write num b:";
+	cin >> b;
+	cout << "Write num c:";
+	cin >> c;
+	k = a;
+	if (a >= b && b >= c) {
+		a *= 2;
+		b *= 2;
+		c *= 2;
+	}
+	else {
+		
+		a = b;
+		b = k;
+	}
+	cout << "Number a:" << a << endl << "Number b:" << b <<endl<< "Number c:" << c <<endl;
+
+	cin.get();
+	return 0;
+}
