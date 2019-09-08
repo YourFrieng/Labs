@@ -1,0 +1,42 @@
+#include <iostream>
+using namespace std;
+
+double calculator(float n);
+
+
+int main()
+{
+	float n;
+	double y;
+	cout << "Write n: ";
+	cin >> n;
+	if (n <= 0) {
+
+		cout << "Write another number";
+
+	}
+	else {
+		y = calculator(n);
+
+		cout << y;
+	}
+
+    return 0;
+}
+
+
+
+
+double calculator(float n) {
+
+	double y = 0.0000000;
+	
+	for (; n > 0; n--) {
+
+		y += (n * n) / ((n + 3) * 3);
+
+	}
+
+
+	return y;
+}
