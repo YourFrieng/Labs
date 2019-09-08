@@ -1,0 +1,32 @@
+#include <iostream>
+using namespace std;
+
+
+int main()
+{
+	int a1, d;
+	cout << "Write first progression member: ";
+	cin >> a1;
+	cout << endl;
+	cout << "Write progression step: ";
+	cin >> d;
+	cout << endl << "for";
+	cout << "Your progression: ";
+	//for
+	for (int i = 0; i < 10; i++) {
+		cout << a1 <<" ";
+		a1 += d;
+	}
+	cout << endl << "while";
+	int i = 0;
+	//while
+	cout << "Write first progression member: ";
+	cin >> a1;
+	cout << "Your progression: ";
+	while (i < 10)
+	{
+		cout << a1 << " ";
+		a1 += d;
+		i++;
+	}
+}
