@@ -1,0 +1,58 @@
+#include <iostream>
+using namespace std;
+
+
+
+int main()
+{
+
+	int num, i , k;
+	cout << "Write number: ";
+	cin >> num;
+	k = num;
+	cout << " 1) Square " << endl << " 2) Cube " << endl << " Write the degree to which you need to calculate the number" << endl;
+	cout << "Chose, what you want to do: ";
+	cin >> i;
+
+	switch (i)
+	{
+	case 0: num = 1; break;
+	case 1: 
+		for (; i > 0; i--) {
+			
+			num *= k; 
+		
+		}; 
+				 
+				 
+				 break;
+	case 2: 
+		for (; i > 0; i--) {
+			
+			num *= k; 
+		
+		}; 
+				 
+				 
+				 break;
+	default:
+
+		for (i -= 1; i > 0; i--) {
+			num *= k;
+		}
+		break;
+	}
+
+
+
+		cout << num;
+	
+
+
+		
+		
+
+
+	return 0;
+}
+
