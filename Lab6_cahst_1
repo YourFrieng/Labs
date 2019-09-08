@@ -1,0 +1,24 @@
+#include <iostream>
+#include <string>
+using namespace std;
+
+
+
+int main()
+{
+    
+	string str1, str2;
+	cout << "Write 1-st string: ";
+	cin >> str1;
+	cout << "Write 2-nd string: ";
+	cin >> str2;
+
+	if (str1 == str2) {
+		cout << "Strings same" << endl;
+	}
+	else {
+		cout << "Strings not same" << endl;
+	}
+	return 0;
+
+}
