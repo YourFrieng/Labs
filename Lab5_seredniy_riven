@@ -1,0 +1,76 @@
+#include <iostream>
+#include <fstream>
+using namespace std;
+
+string delete_comments(string str);
+
+int main()
+{
+
+	string path = "E:\\C++\\лабы+палево\\ipt.proga.1sem\\redact.cpp";
+	ifstream cpp_file;
+	cpp_file.open(path);
+
+	string str, str_result;
+	const int N = 256;
+	char temp[N];
+
+	if (cpp_file.is_open()) {
+		while (cpp_file.good())
+		{
+			cpp_file.getline(temp, N);
+			str += temp ;
+			str += '\n';
+		}
+		str_result = delete_comments(str);
+		
+	}
+	else {
+		return -1;
+	}
+	//cout << str_result << endl;
+
+	
+	cpp_file.close();
+
+	ofstream cpp_file_write;
+	cpp_file_write.open(path);
+	if (!cpp_file_write) {
+		cout << "Can`t open file to delete comments" << endl;
+
+	}
+	else {
+		cpp_file_write << str_result;
+	}
+	cpp_file_write.close();
+	cout << "We did it!!!" << endl;
+	system("pause");
+	return 0;
+}
+
+string delete_comments(string str)
+{
+	bool Del = false;
+	for (size_t i = 0; i < strlen(str.c_str()); i++) {
+		if (Del == false) {
+			if (str[i] == '/' && str[i + 1] == '/') {
+				Del = true;
+			}
+			else {
+				continue;
+			}
+		}
+		else {
+			if (str[i] != '\n') {
+				str[i] = ' ';
+				str[i - 1] = ' ';
+			}
+			else {
+				Del = false;
+
+			}
+		}
+
+	}
+	return str;
+}
