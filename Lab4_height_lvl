@@ -41,7 +41,13 @@ int main()
 	gy_fun(arr, gy, rows, cols);
 	for (int i = 0; i < rows; i++) {
 		for (int j = 0; j < cols; j++) {
-			arr[i][j] = sqrt((pow(gy[i][j], 2) + pow(gx[i][j], 2)));
+			
+			if ((sqrt((pow(gy[i][j], 2) + pow(gx[i][j], 2)))) > 255) {
+				arr[i][j] = 255;
+			}
+			else {
+				arr[i][j] = sqrt((pow(gy[i][j], 2) + pow(gx[i][j], 2)));
+			}
 		}
 	}
 
@@ -57,7 +63,7 @@ void init2DMass(int** mass2d, size_t rows, size_t cols)
 {
 	for (int i = 0; i < rows; i++) {
 		for (int j = 0; j < cols; j++) {
-			mass2d[i][j] = (rand() % 255) + 1;
+			mass2d[i][j] = rand() % 255 + 1;
 		}
 	}
 }
@@ -175,6 +181,8 @@ void gy_fun(int** old_mass, int** new_mass, size_t rows, size_t cols)
 
 	}
 }
+
+
 void print2DMassDouble(double** mass2d, size_t rows, size_t cols)
 {
 	for (int i = 0; i < rows; i++) {
