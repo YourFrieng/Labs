@@ -1,0 +1,89 @@
+#include <iostream>
+using namespace std;
+
+
+
+void do_that(int a, int b, int c);
+
+
+
+int main() {
+	int a, b, c;
+
+
+
+	try
+	{
+
+		cout << "Write num a:";
+		cin >> a;
+
+		if (!cin)
+		{
+			
+			throw exception("That type is`t correct, please write a number");
+
+		}
+
+		cout << "Write num b:";
+		cin >> b;
+
+		if (!cin)
+		{
+
+			throw exception("That type is`t correct, please write a number");
+		
+		}
+
+		cout << "Write num c:";
+		cin >> c;
+
+		if (!cin)
+		{
+
+			throw exception("That is`t correct, please write a number");
+		
+		}
+
+
+
+
+		do_that(a, b, c);
+	}
+	catch (const std::exception & str)
+	{
+
+		cout << str.what() << endl;
+	
+	}
+	catch (const int& ex)
+	{
+	
+		a *= 2;
+		b *= 2;
+		c *= 2;
+		cout << "Num a: " << a << endl << "Num b: " << b << endl << "Num c: " << c << endl;
+
+	}
+
+
+
+	cin.get();
+	return 0;
+}
+
+
+
+
+
+
+void do_that(int a, int b, int c)
+{
+	if (a >= b && b >= c) {
+		throw 1;
+	}
+	c = a;
+	a = b;
+	b = c;
+	cout << "Num a: " << a << endl << "Num b: " << b << endl;
+}
