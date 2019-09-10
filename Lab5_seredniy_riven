@@ -1,3 +1,8 @@
+/*
+4. Створіть програму, що буде видаляти з лістингу програми на мові С++ (файл *.cpp)
+коментарі виду // коментар. Для роботи з файлами використовуйте функції fstream.
+*/
+
 #include <iostream>
 #include <fstream>
 using namespace std;
@@ -7,7 +12,7 @@ string delete_comments(string str);
 int main()
 {
 
-	string path = "E:\\C++\\лабы+палево\\ipt.proga.1sem\\redact.cpp";
+	string path = "Тут должен быть путь к файлу";
 	ifstream cpp_file;
 	cpp_file.open(path);
 
