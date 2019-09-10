@@ -1,3 +1,8 @@
+/*
+Вариант - 4
+4. Для заданого n обчислити значення виразу
+*/
+
 #include <iostream>
 using namespace std;
 
