@@ -1,3 +1,7 @@
+/*
+4. Порівняти два введених рядки.
+*/
+
 #include <iostream>
 #include <string>
 using namespace std;
