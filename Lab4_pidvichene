@@ -1,5 +1,10 @@
-#include<iostream>
+/*
+Вариант 4
+4. Заповнити двовимірний масив розмірності nxm
+за заданим правилом:
+*/
 
+#include<iostream>
 
 using namespace std;
 
