@@ -41,7 +41,7 @@ public:
 		first = nullptr;
 	};
 
-	int& operator [](int i) { return (this->first + i)->num; };
+	T& operator [](int i) { return (this->first + i)->num; };
 	Array operator +(const Array& B) {
 		if (size == B.size) {
 			Array newest(B);
